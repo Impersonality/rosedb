@@ -67,6 +67,7 @@ type Config struct {
 	MergeThreshold int `json:"merge_threshold" toml:"merge_threshold"` // threshold to reclaim disk
 
 	MergeCheckInterval time.Duration `json:"merge_check_interval"`
+	CacheCapacity      int           `json:"cache_capacity" toml:"cache_capacity"`
 }
 
 // DefaultConfig get the default config.

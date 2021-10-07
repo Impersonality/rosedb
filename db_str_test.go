@@ -435,3 +435,10 @@ func BenchmarkRoseDB_Get(b *testing.B) {
 		}
 	}
 }
+
+func TestRoseDB_CacheGet(t *testing.T) {
+	err := roseDB.Set("hello", "world")
+	assert.Equal(t, err, nil)
+	var result string
+	roseDB.Get("hello", &result)
+}
