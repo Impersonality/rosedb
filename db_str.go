@@ -529,7 +529,7 @@ func (db *RoseDB) getVal(key []byte) ([]byte, error) {
 	// Otherwise, get the value from the db file at the offset.
 	if db.config.IdxMode == KeyOnlyMemMode {
 		if value, ok := db.cache.Get(key); ok {
-			return value.([]byte), nil
+			return value, nil
 		}
 
 		df, err := db.getActiveFile(String)

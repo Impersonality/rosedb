@@ -43,6 +43,9 @@ const (
 	// DefaultMergeCheckInterval a timer will be set according to the check interval.
 	// Then merge operation will execute periodically.
 	DefaultMergeCheckInterval = time.Hour * 24
+
+	// DefaultCacheCapacity default cache capacity: 64.
+	DefaultCacheCapacity = 64
 )
 
 // Config the opening options of rosedb.
@@ -83,5 +86,6 @@ func DefaultConfig() Config {
 		Sync:               false,
 		MergeThreshold:     DefaultMergeThreshold,
 		MergeCheckInterval: DefaultMergeCheckInterval,
+		CacheCapacity:      DefaultCacheCapacity,
 	}
 }
